@@ -1,4 +1,4 @@
-def print_hexadecimal(number):
-  print(f"{number:d} = {number:x}")
-for number in range(0, 99):
-  print_hexadecimal(number)
+n = 98
+for i in range(0, n+1):
+    hex_value = "{0:x}".format(i)
+    print(hex_value)
