@@ -1,8 +1,8 @@
 a = 1
 b = 2
 
-from add_0 import add
+add_module = __import__('add_0')
 
-result = add(a, b)
+result = add_module.add(a, b)
 
 print("{} + {} = {}".format(a, b, result))
