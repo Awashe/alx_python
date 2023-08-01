@@ -22,4 +22,4 @@ if __name__ == '__main__':
         for i, arg in enumerate(arg_list, start=1):
             print(f"{i}: {arg}")
     else:
-        print("No arguments.")
+        print("0 arguments.")
