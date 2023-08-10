@@ -1,3 +1,4 @@
+"""determines if an object is exactly instance of specified class"""
 def is_same_class(obj, a_class):
     """
     determines if an object is exactly instance of specified class.
