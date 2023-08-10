@@ -3,4 +3,5 @@ class BaseGeometry:
     """
     A base class for geometrical objects.
     """
-    pass
+    def __dir__(self):
+        return list(self.__dict__.keys())
