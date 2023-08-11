@@ -3,13 +3,14 @@ class BaseGeometry:
     """
     A class representing basic geometry operations
 
+    ...
+
     Methods
     -------
     area(self):
         Raises an Exception indicating that the method is not yet implemented.
     integer_validator(self, name, value):
         Validates that the given value is an integer greater than 0.
-
     """
 
     def area(self):
