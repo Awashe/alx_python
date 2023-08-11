@@ -1,4 +1,4 @@
-"""Rectangle- to Write a class Rectangle that inherits from BaseGeometry (5-base_geometry.py)."""
+"""Rectangle- to Write a class Rectangle that inherits from BaseGeometry (5-base_geometry.py)"""
 class Rectangle(BaseGeometry):
     """
     A class representing a Rectangle shape
