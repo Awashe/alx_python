@@ -1,48 +1,65 @@
 """Write a class Rectangle that inherits from BaseGeometry (5-base_geometry.py). (task based on 6-rectangle.py)"""
-class BaseGeometry:
+class Rectangle(BaseGeometry):
     """
-    A class representing basic geometry operations
-    ...
+    A class representing a Rectangle shape.
+
+    Attributes
+    ----------
+    __width : int
+        The width of the Rectangle object.
+    __height : int
+        The height of the Rectangle object.
+
     Methods
     -------
-    area(self):
-        Raises an Exception indicating that the method is not yet implemented.
-    integer_validator(self, name, value):
-        Validates that the given value is an integer greater than 0.
+    area():
+        Returns the area of the Rectangle object.
+    __str__():
+        Returns a string representation of the Rectangle object.
     """
+
+    def __init__(self, width, height):
+        """
+        Constructs and initializes a new Rectangle object with the
+        specified width and height values.
+
+        Parameters
+        ----------
+        width : int
+            The width of the Rectangle object.
+        height : int
+            The height of the Rectangle object.
+
+        Raises
+        ------
+        TypeError
+            If either width or height is not an integer.
+        ValueError
+            If either width or height is less than or equal to 0.
+        """
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
 
     def area(self):
         """
-        Raises an Exception indicating that the method is not yet implemented.
+        Returns the area of the Rectangle object.
 
-        Parameters:
-        None
-
-        Returns:
-        None
-
-        Raises:
-        Exception: indicating that the method is not yet implemented.
+        Returns
+        -------
+        int
+            The area of the Rectangle object.
         """
-        raise Exception("area() is not implemented")
+        return self.__width * self.__height
 
-    def integer_validator(self, name, value):
+    def __str__(self):
         """
-        Validates that the given value is an integer greater than 0.
+        Returns a string representation of the Rectangle object.
 
-        Parameters:
-        name (str): The name of the variable being validated.
-        value (int): The value to validate.
-
-        Returns:
-        None
-
-        Raises:
-        TypeError: if the value is not an integer.
-        ValueError: if the value is less than or equal to 0.
-
+        Returns
+        -------
+        str
+            A string representation of the Rectangle object.
         """
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
