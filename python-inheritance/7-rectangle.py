@@ -2,9 +2,7 @@
 class BaseGeometry:
     """
     A class representing basic geometry operations
-
     ...
-
     Methods
     -------
     area(self):
