@@ -162,7 +162,6 @@ class Rectangle(Base):
         Returns:
             None
         """
-
         for i in range(self.y):
             print()
         for i in range(self.height):
