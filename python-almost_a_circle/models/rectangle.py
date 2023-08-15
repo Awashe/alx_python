@@ -156,17 +156,17 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """Draw the rectangle using '#' symbols.
+        """Prints the rectangle using '#' symbol.
 
         Returns:
             None
         """
 
-        for y in range(self.y):
+        for i in range(self.y):
             print()
-        for h in range(self.height):
-            for x in range(self.x):
+        for i in range(self.height):
+            for j in range(self.x):
                 print(" ", end="")
-            for w in range(self.width):
+            for j in range(self.width):
                 print("#", end="")
             print()
