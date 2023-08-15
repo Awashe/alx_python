@@ -17,6 +17,7 @@ class Rectangle(Base):
         __init__(self, width, height, x=0, y=0, id=None): Constructor method for Rectangle class.
         area(self): Returns the area of the rectangle.
         display(self): Prints the rectangle using '#' symbol.
+        update(self, *args): Updates the attributes of the rectangle instance based on the arguments.
         __str__(self): Returns a string representation of the Rectangle instance.
     """
 
@@ -162,6 +163,7 @@ class Rectangle(Base):
         Returns:
             None
         """
+
         for i in range(self.y):
             print()
         for i in range(self.height):
@@ -170,6 +172,27 @@ class Rectangle(Base):
             for j in range(self.width):
                 print("#", end="")
             print()
+
+    def update(self, *args):
+        """Update the attributes of the rectangle instance based on the arguments.
+
+        Args:
+            *args: A tuple of arguments.
+
+        Returns:
+            None
+        """
+        num_args = len(args)
+        if num_args >= 1:
+            self.id = args[0]
+        if num_args >= 2:
+            self.width = args[1]
+        if num_args >= 3:
+            self.height = args[2]
+        if num_args >= 4:
+            self.x = args[3]
+        if num_args >= 5:
+            self.y = args[4]
 
     def __str__(self):
         """Return a string representation of the Rectangle instance.
