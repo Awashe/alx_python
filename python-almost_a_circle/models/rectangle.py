@@ -15,6 +15,8 @@ class Rectangle(Base):
 
     Methods:
         __init__(self, width, height, x=0, y=0, id=None): Constructor method for Rectangle class.
+        area(self): Returns the area of the rectangle.
+        display(self): Prints the rectangle using '#' symbol.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -143,3 +145,28 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = value
+    
+    def area(self):
+        """Calculate and return the area of the rectangle.
+
+        Returns:
+            int: The area of the rectangle.
+        """
+
+        return self.width * self.height
+
+    def display(self):
+        """Draw the rectangle using '#' symbols.
+
+        Returns:
+            None
+        """
+
+        for y in range(self.y):
+            print()
+        for h in range(self.height):
+            for x in range(self.x):
+                print(" ", end="")
+            for w in range(self.width):
+                print("#", end="")
+            print()
