@@ -17,6 +17,7 @@ class Rectangle(Base):
         __init__(self, width, height, x=0, y=0, id=None): Constructor method for Rectangle class.
         area(self): Returns the area of the rectangle.
         display(self): Prints the rectangle using '#' symbol.
+        __str__(self): Returns a string representation of the Rectangle instance.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -170,3 +171,12 @@ class Rectangle(Base):
             for j in range(self.width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """Return a string representation of the Rectangle instance.
+
+        Returns:
+            str: A string representation of the object.
+        """
+
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
