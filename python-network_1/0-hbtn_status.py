@@ -5,7 +5,6 @@ The purpose of this code module is to perform a basic status check of a web appl
 
 To use this module, the user needs to import the `requests` library and provide a URL to check. The code retrieves and prints the content of the response if the status code is 200, providing useful information for debugging or testing purposes. If the status code is not 200, an error message is printed to the console to indicate the failure.
 """
-import sys
 import requests
 
 def fetch_status():
@@ -27,6 +26,6 @@ def fetch_status():
 if __name__ == '__main__':
     try:
         print(fetch_status())
-        sys.stderr.write("[stderr]: Successful execution\n")
+        print("[stderr]: [Anything]")
     except Exception as e:
-        sys.stderr.write("[stderr]: Error occurred: " + str(e) + "\n")
+        print("[stderr]: Error occurred: " + str(e))
