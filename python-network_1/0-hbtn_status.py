@@ -12,13 +12,13 @@ def fetch_status():
     """
     url = 'https://alu-intranet.hbtn.io/status'
     response = requests.get(url)
-    response_body = response.json()
 
-    status = response_body.get('status')
-    environment = response_body.get('environment')
+    # If the response was successful, no Exception will be raised
+    response.raise_for_status()
 
-    body_str = f"Status: {status}\n\
-        Environment: {environment}"
+    body_str = f"Body response:\n\
+        - type: {type(response.text)}\n\
+        - content: {response.text}"
     return body_str
 
 if __name__ == '__main__':
