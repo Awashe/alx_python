@@ -3,6 +3,19 @@ A module that fetches the status of a website using the requests library.
 """
 import requests
 
+"""
+    Sends a GET request to the specified URL and displays the body of the response.
+
+    Parameters:
+        url (str): The URL to fetch the status of.
+
+    Returns:
+        None.
+
+    Raises:
+        requests.exceptions.RequestException: If the request fails for any reason.
+"""
+
 url="https/alu-intranet.htbn.io/status"
 response = requests.get(url)
 
