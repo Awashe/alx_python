@@ -18,14 +18,10 @@ def fetch_status():
     # If the response was successful, no Exception will be raised
     response.raise_for_status()
 
-    body_str = f"Body response:\n\
-        - type: {type(response.text)}\n\
+    body_str = f"Body response:\
+        - type: {type(response.text)}\
         - content: {response.text}"
     return body_str
 
 if __name__ == '__main__':
-    try:
-        print(fetch_status())
-        print("[stderr]: [Anything]")
-    except Exception as e:
-        print("[stderr]: Error occurred: " + str(e))
+    print(fetch_status())
