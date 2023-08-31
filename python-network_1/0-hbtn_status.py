@@ -16,7 +16,9 @@ def fetch_status():
     # If the response was successful, no Exception will be raised
     response.raise_for_status()
 
-    body_str = f"Body response: type={type(response.text)}, content={response.text}"
+    body_str = f"Body response:\n\
+        - type: {type(response.text)}\n\
+        - content: {response.text}"
     return body_str
 
 if __name__ == '__main__':
