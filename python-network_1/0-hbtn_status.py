@@ -5,14 +5,15 @@ The purpose of this code module is to perform a basic status check of a web appl
 
 To use this module, the user needs to import the `requests` library and provide a URL to check. The code retrieves and prints the content of the response if the status code is 200, providing useful information for debugging or testing purposes. If the status code is not 200, an error message is printed to the console to indicate the failure.
 """
+import sys
 import requests
 
 def fetch_status():
     """
-    Fetches the status from https://alu-intranet.hbtn.io/status using requests.
+    Fetches the status from https://intranet.hbtn.io/status using requests.
     Returns a string representation of the response body.
     """
-    url = 'https://alu-intranet.hbtn.io/status'
+    url = 'https://intranet.hbtn.io/status'
     response = requests.get(url)
 
     # If the response was successful, no Exception will be raised
@@ -24,4 +25,8 @@ def fetch_status():
     return body_str
 
 if __name__ == '__main__':
-    print(fetch_status())
+    try:
+        print(fetch_status())
+        sys.stderr.write("[stderr]: Successful execution\n")
+    except Exception as e:
+        sys.stderr.write("[stderr]: Error occurred: " + str(e) + "\n")
