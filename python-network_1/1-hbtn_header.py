@@ -26,4 +26,4 @@ if __name__ == '__main__':
     if request_id:
         print("{}".format(request_id))
     else:
-        print("X-Request-Id header not found in server response.")
+        print("None")
