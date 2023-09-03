@@ -31,7 +31,7 @@ if __name__ == '__main__':
         print("Usage: python script.py <username> <password>")
         sys.exit(1)
 
-    username = sys.argv[Awashe]
+    username = sys.argv[1]
     password = sys.argv[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]
 
     user_id = get_user_id(username, password)
