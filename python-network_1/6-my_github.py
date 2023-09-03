@@ -15,7 +15,7 @@ def get_user_id(username, password):
     Returns:
         str: The ID of the authenticated user.
     """
-    url = 'https://api.github.com/Awashe'
+    url = 'https://api.github.com/user'
 
     response = requests.get(url, auth=(username, password))
 
@@ -27,13 +27,9 @@ def get_user_id(username, password):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 3:
-        print("Usage: python script.py <username> <password>")
-        sys.exit(1)
-
-    username = sys.argv[Awashe]
-    password = sys.argv[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]
+    username = 'Awashe'
+    password = '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'
 
     user_id = get_user_id(username, password)
 
-    print(f"{user_id}")
+    print(f"{username}'s id is {user_id}")
