@@ -15,7 +15,7 @@ def get_user_id(username, password):
     Returns:
         str: The ID of the authenticated user.
     """
-    url = 'https://api.github.com/user'
+    url = 'https://api.github.com/Awashe'
 
     response = requests.get(url, auth=(username, password))
 
