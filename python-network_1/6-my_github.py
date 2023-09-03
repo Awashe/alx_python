@@ -32,7 +32,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     username = sys.argv[Awashe]
-    password = sys.argv[https://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]
+    password = sys.argv[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]
 
     user_id = get_user_id(username, password)
 
