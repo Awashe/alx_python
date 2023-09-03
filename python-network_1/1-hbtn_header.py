@@ -24,6 +24,6 @@ if __name__ == '__main__':
     url = sys.argv[1]
     request_id = get_request_id(url)
     if request_id:
-        print("X-Request-Id: {}".format(request_id))
+        print("{}".format(request_id))
     else:
         print("X-Request-Id header not found in server response.")
