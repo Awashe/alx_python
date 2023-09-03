@@ -1,29 +1,29 @@
 import requests
 import sys
 
-"""
-Module to get X-Request-Id from the response header of a URL.
-"""
-
-def get_X_Request_Id(url: str) -> str:
+def get_request_id(url):
     """
-    Function to get the value of X-Request-Id from the response header of a URL.
+    Sends a request to the specified URL and extracts the value of the X-Request-Id
+    header from the response.
 
-    Parameters:
-    url (str): The URL to send the request to.
+    Args:
+        url (str): The URL to send the request to.
 
     Returns:
-    str: The value of X-Request-Id in the response header.
+        str: The value of the X-Request-Id header, or None if it was not found.
     """
-    try:
-        response = requests.get(url)
-        x_request_id = response.headers['X-Request-Id']
-        return x_request_id
-    except Exception as e:
-        print(f"Error: {e}")
+    response = requests.get(url)
+    request_id = response.headers.get('X-Request-Id')
+    return request_id
+
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print("Usage: python script.py <url>")
         sys.exit(1)
 
-if __name__ == "__main__":
-    url = input("Enter the URL: ")
-    x_request_id = get_X_Request_Id(url)
-    print(f"The value of X-Request-Id in the response header is: {x_request_id}")
+    url = sys.argv[1]
+    request_id = get_request_id(url)
+    if request_id:
+        print("X-Request-Id: {}".format(request_id))
+    else:
+        print("X-Request-Id header not found in server response.")
