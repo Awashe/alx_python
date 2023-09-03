@@ -32,4 +32,4 @@ if __name__ == '__main__':
 
     user_id = get_user_id(username, password)
 
-    print(f"{username}'s id is {user_id}")
+    print(f"{user_id}")
