@@ -1,21 +1,34 @@
 #!/usr/bin/python3
-import MySQLdb
 import sys
-connect = MySQLdb.connect(
-        host="localhost", user=sys.argv[1], password=sys.argv[2],
-        database=sys.argv[3], port=3306
-)
-input_name = sys.argv[4]
-cursor = connect.cursor()
-query = """
-    SELECT *
-    FROM states
-    WHERE name LIKE BINARY '{}%' (input_name, )
-    ORDER BY id ASC;
-    """
-cursor.execute(query)
-for obj in cursor:
-    print(obj)
-cursor.close()
-connect.close()
+import MySQLdb
 
+# take in arguments: mysql username, mysql password, database name, state name searched
+mysql_username = sys.argv[1]
+mysql_password = sys.argv[2]
+database_name = sys.argv[3]
+state_name = sys.argv[4]
+
+# connect to MySQL server running on localhost at port 3306
+db = MySQLdb.connect(
+    host="localhost",
+    port=3306,
+    user=mysql_username,
+    passwd=mysql_password,
+    db=database_name,
+    charset="utf8"
+)
+
+# execute SQL query safely using parameterized queries
+cur = db.cursor()
+cur.execute("SELECT * FROM states WHERE name=%s ORDER BY id ASC", (state_name,))
+
+# fetch all the rows in a list of lists.
+rows = cur.fetchall()
+
+# display results
+for row in rows:
+    print(row)
+
+# close all cursors and databases
+cur.close()
+db.close()
