@@ -9,16 +9,28 @@ database_name = sys.argv[3]
 state_name = sys.argv[4]
 
 # connect to MySQL server running on localhost at port 3306
-db = MySQLdb.connect(host="localhost", port=3306, user=mysql_username, passwd=mysql_password, db=database_name, charset="utf8")
+db = MySQLdb.connect(
+    host="localhost",
+    port=3306,
+    user=mysql_username,
+    passwd=mysql_password,
+    db=database_name,
+    charset="utf8"
+)
+
 # execute SQL query safely using parameterized queries
 cur = db.cursor()
 sql_query = "SELECT * FROM states WHERE name=%s ORDER BY id ASC"
-cur.execute(sql_query, (state_name,))
+params = (state_name,)
+cur.execute(sql_query, params)
+
 # fetch all the rows in a list of lists.
 rows = cur.fetchall()
+
 # display results
 for row in rows:
     print(row)
+
 # close all cursors and databases
 cur.close()
 db.close()
