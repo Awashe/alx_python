@@ -20,7 +20,8 @@ db = MySQLdb.connect(
 
 # execute SQL query safely using parameterized queries
 cur = db.cursor()
-cur.execute("SELECT * FROM states WHERE name=%s ORDER BY id ASC", (state_name,))
+sql_query = "SELECT * FROM states WHERE name=%s ORDER BY id ASC"
+cur.execute(sql_query, (state_name,))
 
 # fetch all the rows in a list of lists.
 rows = cur.fetchall()
@@ -29,5 +30,6 @@ rows = cur.fetchall()
 for row in rows:
     print(row)
 
+# close all cursors and databases
 cur.close()
 db.close()
