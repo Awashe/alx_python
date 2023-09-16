@@ -29,6 +29,5 @@ rows = cur.fetchall()
 for row in rows:
     print(row)
 
-# close all cursors and databases
 cur.close()
 db.close()
