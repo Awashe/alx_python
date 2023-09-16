@@ -33,3 +33,4 @@ for row in rows:
 # close all cursors and databases
 cur.close()
 db.close()
+
