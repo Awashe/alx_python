@@ -43,7 +43,7 @@ def display_number(n):
 """
 @app.route('/number/<int:n>')
 def display_number(n):
-    return "{} is an integer".format(n)
+    return "{} is a number".format(n)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",port=5000)
