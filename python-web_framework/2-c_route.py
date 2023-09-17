@@ -20,7 +20,7 @@ def hbnb():
     return "HBNB"
 
 @app.route("/c/<text>", strict_slashes=False)
-def c_text():
+def c_text(text):
     # Replace '_' with spaces
     text = text.replace("_", " ")
     return "C {}".format(text)
