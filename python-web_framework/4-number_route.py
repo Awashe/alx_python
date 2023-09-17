@@ -32,6 +32,7 @@ def python(text):
     text = text.replace("_", " ")
     return "Python {}".format(text)
 
+"""
 @app.route("/number/<n>", strict_slashes=False)
 def display_number(n):
     # Check that n is an integer
@@ -39,6 +40,10 @@ def display_number(n):
         return "{} is a number".format(n)
     else:
         return abort(404)
+"""
+@app.route('/number/<int:n>')
+def display_number(n):
+    return "{} is an integer".format(n)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",port=5000)
