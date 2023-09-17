@@ -25,6 +25,7 @@ def c_text(text):
     text = text.replace("_", " ")
     return "C {}".format(text)
 
+@app.route('/python/', defaults={'text': 'default'})
 @app.route("/python/<text>", strict_slashes=False)
 def python(text):
     # Replace '_' with spaces
