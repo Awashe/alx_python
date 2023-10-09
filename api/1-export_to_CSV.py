@@ -21,3 +21,8 @@ with open(csv_filename, mode='w', newline='') as employee_file:
     employee_writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
     for task in todo_data:
         employee_writer.writerow([employee_id, employee_name, str(task["completed"]), task["title"]])
+
+# create an empty CSV file with headers
+with open('8.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['task_id', 'task_name', 'status', 'due_date'])
