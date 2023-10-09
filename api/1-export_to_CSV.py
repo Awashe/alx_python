@@ -101,3 +101,12 @@ if __name__ == "__main__":
         sys.exit(1)
 
     get_employee_todo_progress(employee_id)
+
+def user_info(id):
+    try:
+        with open(str(id) + ".csv", 'r') as f:
+            reader = csv.reader(f)
+            data = list(reader)
+            print("Number of tasks in CSV:", len(data))
+    except FileNotFoundError:
+        print(f"Error: CSV file for user {id} does not exist.")    
